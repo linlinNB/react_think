@@ -1,0 +1,22 @@
+{
+    "version": 3,
+    "sources": [
+        "..\\..\\src\\logic\\index.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Logic",
+        "_before",
+        "console",
+        "log",
+        "indexAction",
+        "_after"
+    ],
+    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACvCC,cAAU;AACNC,gBAAQC,GAAR,CAAY,oBAAZ;AACH;;AAEDC,kBAAc;AACVF,gBAAQC,GAAR,CAAY,kCAAZ;AACH;;AAEDE,aAAS;AACLH,gBAAQC,GAAR,CAAY,mBAAZ;AACH;AAXsC,CAA3C",
+    "file": "..\\..\\src\\logic\\index.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Logic {\n    _before() {\n        console.log('一个请求进来了，经过了_before')\n    }\n\n    indexAction() {\n        console.log('经过了Logic， 现在在indexAction中做出相对应处理')\n    }\n\n    _after() {\n        console.log('一个回复发送了，经过了_after')\n    }\n};\n"
+    ]
+}

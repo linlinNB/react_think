@@ -1,0 +1,30 @@
+{
+    "version": 3,
+    "sources": [
+        "..\\..\\src\\controller\\user.js"
+    ],
+    "names": [
+        "Base",
+        "require",
+        "module",
+        "exports",
+        "loginAction",
+        "LoginName",
+        "post",
+        "LoginPassword",
+        "console",
+        "log",
+        "result",
+        "model",
+        "where",
+        "find",
+        "think",
+        "isEmpty",
+        "json"
+    ],
+    "mappings": "AAAA,MAAMA,OAAOC,QAAQ,WAAR,CAAb;AACAC,OAAOC,OAAP,GAAiB,cAAcH,IAAd,CAAmB;AAChCI,kBAAa;AACT,YAAIC,YAAY,KAAKC,IAAL,CAAU,WAAV,CAAhB;AACA,YAAIC,gBAAgB,KAAKD,IAAL,CAAU,eAAV,CAApB;AACAE,gBAAQC,GAAR,CAAY,YAAZ,EAA0BJ,SAA1B;AACAG,gBAAQC,GAAR,CAAY,WAAZ,EAAyBF,aAAzB;AACA,YAAIG,SAAS,KAAKC,KAAL,CAAW,OAAX,EAAoBC,KAApB,CAA0B,EAAC,iBAAgBP,SAAjB;AACnC,6BAAiBE,aADkB,EAA1B,EACwBM,IADxB,EAAb;AAEAL,gBAAQC,GAAR,CAAY,YAAZ,EAA0BC,MAA1B;AACA,YAAII,MAAMC,OAAN,CAAcL,MAAd,CAAJ,EAA2B;AACvB,iBAAKM,IAAL,CAAU,EAAC,aAAa,KAAd,EAAV;AACH,SAFD,MAEO;AACH,iBAAKA,IAAL,CAAU,EAAC,aAAa,IAAd,EAAV;AACH;AACJ;AAd+B,CAApC",
+    "file": "..\\..\\src\\controller\\user.js",
+    "sourcesContent": [
+        "const Base = require('./base.js');\r\nmodule.exports = class extends Base {\r\n    loginAction(){\r\n        let LoginName = this.post('LoginName');\r\n        let LoginPassword = this.post('LoginPassword');\r\n        console.log('获取到的登录名 = ', LoginName);\r\n        console.log('获取到的密码 = ', LoginPassword);\r\n        let result = this.model('Login').where({'LoginUserName':LoginName,\r\n            \"LoginPassWord\": LoginPassword}).find();\r\n        console.log('数据库查询结果 = ', result);\r\n        if (think.isEmpty(result)) {\r\n            this.json({'loginsucc': false});\r\n        } else {\r\n            this.json({'loginsucc': true});\r\n        }\r\n    }\r\n}"
+    ]
+}

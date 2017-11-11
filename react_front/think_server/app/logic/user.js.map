@@ -1,0 +1,22 @@
+{
+    "version": 3,
+    "sources": [
+        "..\\..\\src\\logic\\user.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Logic",
+        "_before",
+        "console",
+        "log",
+        "loginAction",
+        "_after"
+    ],
+    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACvCC,cAAU;AACNC,gBAAQC,GAAR,CAAY,wBAAZ;AACH;;AAEDC,kBAAc;AACVF,gBAAQC,GAAR,CAAY,sCAAZ;AACH;;AAEDE,aAAS;AACLH,gBAAQC,GAAR,CAAY,uBAAZ;AACH;AAXsC,CAA3C",
+    "file": "..\\..\\src\\logic\\user.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Logic {\r\n    _before() {\r\n        console.log('user一个请求进来了，经过了_before')\r\n    }\r\n\r\n    loginAction() {\r\n        console.log('user经过了Logic， 现在在indexAction中做出相对应处理')\r\n    }\r\n\r\n    _after() {\r\n        console.log('user一个回复发送了，经过了_after')\r\n    }\r\n};"
+    ]
+}
